@@ -1,0 +1,99 @@
+/* General Styles for Devise Forms */
+.devise-form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#transparent-container {
+  background-color: transparent; /* Fully transparent background */
+  border: 2px solid white; /* White border */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+
+.devise-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+.devise-form-container.custom-checkbox{
+ 
+}
+
+/* Input Fields */
+.devise-form-container input[type="email"],
+.devise-form-container input[type="password"],
+.devise-form-container input[type="text"],
+.devise-form-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.devise-form-container input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.devise-form-container input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Links */
+.devise-form-container .links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.devise-form-container .links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.devise-form-container .links a:hover {
+  text-decoration: underline;
+}
+
+/* Error Messages */
+.devise-form-container .alert {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.devise-form-container .alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.devise-form-container .alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+/* Custom Checkbox */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #28a745;
+  border-color: #28a745;
+  margin-left: 25px;
+}
+
+
+.background{
+
+  background-color: transparent;
+  color:white;
+}

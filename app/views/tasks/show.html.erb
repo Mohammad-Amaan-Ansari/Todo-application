@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1 class="text-center"><%= @task.title %></h1>
+
+  <div class="card mt-4" style="background-color: transparent; border: 2px solid white;">
+    <div class="card-body" style="color: white;">
+      <p><strong>Description:</strong> <%= @task.description %></p>
+      <p><strong>Due Date:</strong> <%= @task.due_date.strftime('%B %d, %Y') %></p>
+      <p><strong>Status:</strong> <span id="task_status_<%= @task.id %>"><%= @task.status.capitalize %></span></p>
+
+      <p><strong>Priority:</strong> <%= @task.priority.capitalize %></p>
+
+      <div class="mt-4">
+      
+        <!-- Back to List button -->
+        <%= link_to 'Back to List', user_tasks_path(current_user), class: 'btn btn-secondary mt-2' %>
+      </div>
+    </div>
+  </div>
+</div>
+

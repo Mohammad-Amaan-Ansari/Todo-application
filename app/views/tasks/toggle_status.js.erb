@@ -1,0 +1,4 @@
+// Update the button text in the index view
+$("#status_button_<%= @task.id %>").text("<%= @task.status.capitalize == 'Pending' ? 'Mark as Completed' : 'Mark as Pending' %>");
+// Update the status text in the show view
+$("#task_status_<%= @task.id %>").text("<%= @task.status.capitalize %>");
