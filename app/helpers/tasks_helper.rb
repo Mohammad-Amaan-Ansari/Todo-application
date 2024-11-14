@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/helpers/tasks_helper.rb
 module TasksHelper
   def priority_badge_class(priority)
     case priority
