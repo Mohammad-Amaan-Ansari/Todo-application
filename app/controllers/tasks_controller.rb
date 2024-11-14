@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
+# app/controllers/tasks_controller.rb
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   def index
     @tasks = current_user.tasks
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @task = current_user.tasks.build
@@ -16,18 +18,17 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      redirect_to user_tasks_path(current_user), notice: "Task was successfully created."
+      redirect_to user_tasks_path(current_user), notice: 'Task was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @task.update(task_params)
-      redirect_to user_task_path(current_user, @task), notice: "Task was successfully updated."
+      redirect_to user_task_path(current_user, @task), notice: 'Task was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +44,7 @@ class TasksController < ApplicationController
   end
 
   def toggle_status
-  @task = Task.find(params[:id])
+    @task = Task.find(params[:id])
 
     if @task.pending?
       @task.complete!
@@ -70,9 +71,6 @@ class TasksController < ApplicationController
       format.js   # This is for AJAX (if you are using it)
     end
   end
-
-
-
 
   private
 

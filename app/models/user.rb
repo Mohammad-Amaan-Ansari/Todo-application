@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/models/user.rb
 class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
 
@@ -6,7 +9,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 
   def user?
     role == 'user'
@@ -16,5 +19,3 @@ class User < ApplicationRecord
     role == 'admin'
   end
 end
-
-

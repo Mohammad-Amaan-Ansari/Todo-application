@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'tasks#index'  
+  root 'tasks#index'
 
   # Devise routes
   devise_for :users
@@ -17,8 +19,7 @@ Rails.application.routes.draw do
   end
 end
 
-
-#   get '/users/:user_id/tasks', to: 'tasks#index', as: 'user_tasks'
+  #   get '/users/:user_id/tasks', to: 'tasks#index', as: 'user_tasks'
   # get '/users/:user_id/tasks/new', to: 'tasks#new', as: 'new_user_task'
   # post '/users/:user_id/tasks', to: 'tasks#create'
   # get '/users/:user_id/tasks/:id', to: 'tasks#show', as: 'user_task'
