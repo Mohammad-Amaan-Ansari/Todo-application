@@ -39,7 +39,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -76,5 +76,20 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
 
-   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Configure Action Mailer
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_options = { from: 'no-reply@example.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtpout.secureserver.net',        # Replace with your SMTP server address
+    port: 25,                                   # Common SMTP port
+    domain: 'google.com',                       # Replace with your domain
+    authentication: :login,                     # Use plain or login based on your SMTP provider
+    user_email: ENV.fetch('EMAIL_USER', nil),    # Replace with your email
+    password: ENV.fetch('EMAIL_PASSWORD', nil), # Replace with your email password (use app-specific password for Gmail)
+    enable_starttls_auto: false                 # Enables STARTTLS
+  }
 end

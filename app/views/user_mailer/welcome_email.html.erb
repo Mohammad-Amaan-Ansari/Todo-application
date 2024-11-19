@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <style>
+    /* Styling for the email container */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container img {
+      max-width: 100%; /* Ensure the image scales with the container */
+      height: auto;    /* Maintain aspect ratio */
+      border-radius: 10px; /* Optional: Round the edges */
+      display: block;  /* Prevent inline display issues */
+      margin: 0 auto;  /* Center the image */
+    }
+
+    h1 {
+      color: #ec1c24;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 10px 0;
+    }
+
+    .highlight {
+      color: #ec1c24;
+      font-weight: bold;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .contact-info p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Button styling */
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #ec1c24;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #c41319;
+    }
+  </style>
+  <body>
+    <div class="email-container">
+      <h1>Hello, <%= @user.email %>! Welcome to Todo Application.</h1>
+      <div class="image-container">
+        <%= image_tag attachments['Todo_Application.jpg'].url, alt: 'My Photo', class: 'photos', size: "300x200" %>
+      </div> 
+      <p class="highlight">Thank you for joining. Click <a href="<%= @url %>">here</a> to get started!</p>
+      <div class="contact-info">
+        <p>
+          You have successfully signed up to Todo Application,
+          your username is: <%= @user.email %>.<br>
+        </p>
+        <p>Thanks for joining and have a great day!</p>
+      </div>
+      <div class="button-container">
+        <a href="mailto:<%= 'amaan2003am@gmail.com' %>" class="button">Reply to Message</a>
+      </div>
+    </div>
+  </body>
+</html>
