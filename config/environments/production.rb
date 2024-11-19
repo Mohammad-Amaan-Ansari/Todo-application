@@ -97,4 +97,18 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.action_mailer.default_url_options = { host: 'todo-application-7fa0.onrender.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    authentication: 'plain',
+    user_name: ENV['EMAIL_USER'], # Set this in Render's environment variables
+    password: ENV['EMAIL_PASSWORD'], # Set this in Render's environment variables
+    enable_starttls_auto: true
+  }
 end
