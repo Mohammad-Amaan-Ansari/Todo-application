@@ -107,8 +107,8 @@ Rails.application.configure do
     port: 587,
     domain: 'gmail.com',
     authentication: 'plain',
-    user_name: ENV['EMAIL_USER'], # Set this in Render's environment variables
-    password: ENV['EMAIL_PASSWORD'], # Set this in Render's environment variables
-    enable_starttls_auto: true
-  }
+  user_name: ENV['EMAIL_USER'], # Correctly referencing ENV variable
+  password: ENV['EMAIL_PASSWORD'], # Correctly referencing ENV variable
+  enable_starttls_auto: true
+}
 end

@@ -1,4 +1,6 @@
 class UserMailer < ApplicationMailer
+  default from: ENV['EMAIL_USER'] # Set the "from" address
+  layout 'mailer'
   def welcome_email(user)
     @user = user
     if Rails.env.production?

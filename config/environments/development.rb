@@ -78,18 +78,18 @@ Rails.application.configure do
 
   # Configure Action Mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.default_options = { from: 'no-reply@example.com' }
+  config.action_mailer.default_options = { from: 'amaan2003am@gmail.com' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: 'smtpout.secureserver.net',        # Replace with your SMTP server address
-    port: 25,                                   # Common SMTP port
-    domain: 'google.com',                       # Replace with your domain
-    authentication: :login,                     # Use plain or login based on your SMTP provider
-    user_email: ENV.fetch('EMAIL_USER', nil),    # Replace with your email
-    password: ENV.fetch('EMAIL_PASSWORD', nil), # Replace with your email password (use app-specific password for Gmail)
-    enable_starttls_auto: false                 # Enables STARTTLS
-  }
+  address: 'smtp.gmail.com',
+  port: 587,
+  domain: 'gmail.com',
+  authentication: 'plain',
+  user_name: ENV['EMAIL_USER'], # Correctly referencing ENV variable
+  password: ENV['EMAIL_PASSWORD'], # Correctly referencing ENV variable
+  enable_starttls_auto: true
+}
 end

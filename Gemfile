@@ -70,3 +70,4 @@ end
 
 gem "devise"
 gem 'rails-observers'
+gem 'dotenv-rails', groups: [:development, :test]
